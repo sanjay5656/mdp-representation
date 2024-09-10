@@ -36,25 +36,28 @@ R = { +10 for correctly exporting a ready product, -10 for exporting a faulty pr
 ## PYTHON REPRESENTATION:
 ```python
 P = {
-    0:{
-        0: [(1.0,0,0.0,True)],
-        1: [(1.0,0,0.0,True)]
+    0: {
+        0: [(0.7, 0, 0.0, True), (0.3, 1, 0.0, False)],  
+        1: [(0.6, 0, 0.0, True), (0.4, 1, 0.0, False)]   
     },
-    1:{
-        0: [(1.0,0,0.0,True)],
-        1: [(1.0,2,1.0,True)]
+    1: {
+        0: [(0.5, 0, 0.0, True), (0.5, 2, 1.0, False)], 
+        1: [(0.9, 2, 1.0, True), (0.1, 0, 0.0, False)]  
     },
-    2:{
-        0: [(1.0,2,0.0,True)],
-        1: [(1.0,2,0.0,True)]
+    2: {
+        0: [(0.8, 2, 0.0, True), (0.2, 1, 0.0, False)],  
+        1: [(1.0, 2, 0.0, True)]                         
     }
 }
+
 ```
 ## OUTPUT:
 ```python
-{0: {0: [(1.0, 0, 0.0, True)], 1: [(1.0, 0, 0.0, True)]},
- 1: {0: [(1.0, 0, 0.0, True)], 1: [(1.0, 2, 1.0, True)]},
- 2: {0: [(1.0, 2, 0.0, True)], 1: [(1.0, 2, 0.0, True)]}}
+{0: {0: [(0.7, 0, 0.0, True), (0.3, 1, 0.0, False)],
+  1: [(0.6, 0, 0.0, True), (0.4, 1, 0.0, False)]},
+ 1: {0: [(0.5, 0, 0.0, True), (0.5, 2, 1.0, False)],
+  1: [(0.9, 2, 1.0, True), (0.1, 0, 0.0, False)]},
+ 2: {0: [(0.8, 2, 0.0, True), (0.2, 1, 0.0, False)], 1: [(1.0, 2, 0.0, True)]}}
 ```
 ## RESULT:
 The provided problem is successfully modeled as an MDP. The state space, action space, and reward function are defined, and a Python simulation demonstrates how the model makes decisions to maximize rewards. This model can be further trained and refined to optimize the product detection process in the manufacturing factory.
